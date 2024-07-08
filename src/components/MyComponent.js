@@ -19,14 +19,28 @@ class MyComponent extends React.Component {
     handleOnMouseHover(event) {
         console.log(event.pageX);
     }
+    handleOnChangeInput = (event) => {
+        this.setState({
+            address: event.target.value
+        })
+
+    }
+    handleOnSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.state);
+    }
 
     render() {
         return (
             <div>
                 My name is {this.state.name}. I live in {this.state.address}. And i'm {this.state.age}.
-                <button onClick={(event) => { this.handleCick(event) }}>Click me</button>
-                <button onMouseOver={this.handleOnMouseHover}>Hover me</button>
-
+                <form onSubmit={(event) => { this.handleOnSubmit(event) }}>
+                    <input
+                        type="text"
+                        onChange={(event) => this.handleOnChangeInput(event)}
+                    />
+                    <button>Change</button>
+                </form>
             </div>
         );
     }
