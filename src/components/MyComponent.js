@@ -9,7 +9,7 @@ class MyComponent extends React.Component {
             { id: 1, name: "Hoidanit", age: 30 },
             { id: 2, name: "Hong Anh", age: 22 },
             { id: 3, name: "Howl", age: 18 },
-            { id: 4, name: "Hip", age: 18 },
+            { id: 4, name: "Hip", age: 16 },
         ]
     }
     render() {
