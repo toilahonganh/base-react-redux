@@ -4,9 +4,29 @@ import logo from "./../logo.svg";
 
 
 class DisplayInfor extends React.Component {
-    state = {
-        isShowListUser: true
+    constructor(props) {
+        console.log(">>call me constructor");
+        super(props);
+        this.state = {
+            isShowListUser: true
+        }
     }
+
+    componentDidMount() {
+        console.log(">> call me componentDidMount");
+        setTimeout(() => {
+            console.log("did mount");
+        }, 2000);
+    };
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log(">> call me did update", this.props, prevProps);
+
+        if (this.props.listUser !== prevProps.listUser) {
+            if (this.props.listUser.length === 5) {
+                console.log("you got 5 users");
+            }
+        }
+    };
 
     handleShowHide = () => {
         this.setState({
@@ -15,6 +35,7 @@ class DisplayInfor extends React.Component {
     }
 
     render() {
+        console.log(">> call me render");
         const { listUser } = this.props;
         return (
             <div className='display-infor-container'>
@@ -48,7 +69,9 @@ class DisplayInfor extends React.Component {
                                             </span>
                                             <p className='text-style'>{user.address}</p>
                                         </div>
-
+                                        <div>
+                                            <button onClick={() => this.props.handleDeleteUser(user.id)}>Delete</button>
+                                        </div>
                                         <hr />
                                     </div>
                                 )
