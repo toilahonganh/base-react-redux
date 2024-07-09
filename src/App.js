@@ -1,8 +1,7 @@
 import './App.css';
 import React from 'react';
 import MyComponent from './components/MyComponent';
-import UserInfor from './components/UserInfor';
-
+import AddUserInfor from './components/AddUserInfor';
 class App extends React.Component {
   render() {
     return (
