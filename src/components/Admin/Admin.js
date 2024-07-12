@@ -1,6 +1,7 @@
 import SideBar from "./SideBar";
 import './Admin.scss';
 import { FaBars } from 'react-icons/fa';
+import { FcPlus } from 'react-icons/fc';
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
